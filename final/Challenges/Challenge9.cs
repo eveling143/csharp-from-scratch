@@ -11,7 +11,7 @@ namespace ejercicios.csharp
             Console.Write("Denominador: ");
             int denominador1 = int.Parse(Console.ReadLine());
 
-            Console.WriteLine("\nIngrese los valores para la segunda fracción:");
+            Console.WriteLine("Ingrese los valores para la segunda fracción:");
             Console.Write("Numerador: ");
             int numerador2 = int.Parse(Console.ReadLine());
             Console.Write("Denominador: ");
