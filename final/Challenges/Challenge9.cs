@@ -21,12 +21,18 @@ namespace ejercicios.csharp
             Fraccion fraccion1 = new Fraccion(numerador1, denominador1);
             Fraccion fraccion2 = new Fraccion(numerador2, denominador2);
 
+            if (denominador1 == 0 || denominador2 == 0)
+            {
 
-            Fraccion diferencia = Fraccion.Diferencia(fraccion1, fraccion2);
+                Console.Write("\nNo se puede dividir por 0");
 
-
-            Console.Write("\nLa diferencia entre las fracciones es: ");
-            diferencia.ImprimirFraccion();
+            }
+            else
+            {
+                Fraccion diferencia = Fraccion.Diferencia(fraccion1, fraccion2);
+                Console.Write("\nLa diferencia entre las fracciones es: ");
+                diferencia.ImprimirFraccion();
+            }
         }
         class Fraccion
         {
@@ -43,14 +49,14 @@ namespace ejercicios.csharp
 
             public static Fraccion Diferencia(Fraccion fraccion1, Fraccion fraccion2)
             {
-                // Verificar si las fracciones son iguales
+
                 if (fraccion1.numerador == fraccion2.numerador && fraccion1.denominador == fraccion2.denominador)
                 {
                     return new Fraccion(0, 0);
                 }
                 else
                 {
-                    // Calcular la diferencia
+
                     int nuevoNumerador = fraccion1.numerador * fraccion2.denominador - fraccion2.numerador * fraccion1.denominador;
                     int nuevoDenominador = fraccion1.denominador * fraccion2.denominador;
                     return new Fraccion(nuevoNumerador, nuevoDenominador);
